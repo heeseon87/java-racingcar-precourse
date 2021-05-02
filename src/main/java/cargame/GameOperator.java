@@ -18,5 +18,9 @@ public class GameOperator {
 			racingCars.race();
 			racingCars.print();
 		}
+
+		Score score = new Score();
+		score.calcWinner(racingCars);
+		score.printWinner();
 	}
 }
