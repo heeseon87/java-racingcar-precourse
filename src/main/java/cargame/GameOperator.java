@@ -12,12 +12,11 @@ public class GameOperator {
 		System.out.println("시도할 회수는 몇회인가요?");
 		int raceCount = sc.nextInt();
 
-		RacingCarList cars = RacingCarList.attend(carData);
+		RacingCarList racingCars = RacingCarList.attend(carData);
 
 		for (int i = 0; i < raceCount; i++) {
-			cars.race();
-			cars.print();
-			System.out.println();
+			racingCars.race();
+			racingCars.print();
 		}
 	}
 }

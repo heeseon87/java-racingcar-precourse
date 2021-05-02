@@ -22,6 +22,10 @@ public class RacingCar {
 		return location;
 	}
 
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
 	public void print() {
 		System.out.printf("%-5s: %s\n", name, location);
 	}
@@ -33,5 +37,27 @@ public class RacingCar {
 
 		location += "-";
 		return true;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof RacingCar)) {
+			return false;
+		}
+
+		RacingCar objCar = (RacingCar)obj;
+		return this.name.equals(objCar.name);
+	}
+
+	public boolean isMe(RacingCar winner) {
+		return this.equals(winner);
+	}
+
+	public boolean isFasterThan(RacingCar winner) {
+		return location.length() > winner.location.length();
+	}
+
+	public boolean isFasterOrEqualTo(RacingCar winner) {
+		return location.length() == winner.location.length();
 	}
 }

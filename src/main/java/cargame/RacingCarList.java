@@ -5,36 +5,41 @@ import java.util.List;
 
 public class RacingCarList {
 
-	private List<RacingCar> cars;
+	private List<RacingCar> racingCars;
 
-	private RacingCarList(List<RacingCar> cars) {
-		this.cars = cars;
+	private RacingCarList(List<RacingCar> racingCars) {
+		this.racingCars = racingCars;
+	}
+
+	public List<RacingCar> getRacingCars() {
+		return racingCars;
 	}
 
 	public static RacingCarList attend(String carData) {
 		String[] carStrArr = carData.split(",");
 
-		List<RacingCar> cars = new ArrayList<>();
+		List<RacingCar> racingCars = new ArrayList<>();
 		for (String name : carStrArr) {
-			cars.add(new RacingCar(name));
+			racingCars.add(new RacingCar(name));
 		}
 
-		return new RacingCarList(cars);
+		return new RacingCarList(racingCars);
 	}
 
 	public void race() {
-		for (RacingCar car : cars) {
-			car.move((Energy.createEnergy(new RandomEnergyGeneratorPolicy())));
+		for (RacingCar racingCar : racingCars) {
+			racingCar.move((Energy.createEnergy(new RandomEnergyGeneratorPolicy())));
 		}
 	}
 
 	public void print() {
-		for (RacingCar car : cars) {
-			car.print();
+		for (RacingCar racingCar : racingCars) {
+			racingCar.print();
 		}
+		System.out.println();
 	}
 
 	public int size() {
-		return cars.size();
+		return racingCars.size();
 	}
 }
