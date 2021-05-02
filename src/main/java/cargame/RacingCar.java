@@ -25,4 +25,13 @@ public class RacingCar {
 	public void print() {
 		System.out.printf("%-5s: %s\n", name, location);
 	}
+
+	public boolean move(int randomNum) {
+		if (randomNum < 4) {
+			return false;
+		}
+
+		location += "-";
+		return true;
+	}
 }
