@@ -2,11 +2,9 @@ package cargame;
 
 import static org.assertj.core.api.Assertions.*;
 
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
 
-public class RacingCarGeneratorTest {
+public class RacingCarListTest {
 
 	@Test
 	void 자동차_이름을_콤마로_구분해서_목록에_추가() {
@@ -14,7 +12,7 @@ public class RacingCarGeneratorTest {
 		String carData = "chico,coco,jamie";
 
 		// when
-		List<RacingCar> racingCars = RacingCarGenerator.createCars(carData);
+		RacingCarList racingCars = RacingCarList.attend(carData);
 
 		// then
 		assertThat(racingCars.size()).isEqualTo(3);

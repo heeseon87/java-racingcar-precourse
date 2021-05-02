@@ -1,6 +1,5 @@
 package cargame;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class GameOperator {
@@ -13,13 +12,11 @@ public class GameOperator {
 		System.out.println("시도할 회수는 몇회인가요?");
 		int raceCount = sc.nextInt();
 
-		List<RacingCar> cars = RacingCarGenerator.createCars(carData);
+		RacingCarList cars = RacingCarList.attend(carData);
 
 		for (int i = 0; i < raceCount; i++) {
-			for (RacingCar car : cars) {
-				car.move(RandomNumGenerator.createNumZeroToNine());
-				car.print();
-			}
+			cars.race();
+			cars.print();
 			System.out.println();
 		}
 	}

@@ -26,8 +26,8 @@ public class RacingCar {
 		System.out.printf("%-5s: %s\n", name, location);
 	}
 
-	public boolean move(int randomNum) {
-		if (randomNum < 4) {
+	public boolean move(Energy energy) {
+		if (!energy.isEnough()) {
 			return false;
 		}
 

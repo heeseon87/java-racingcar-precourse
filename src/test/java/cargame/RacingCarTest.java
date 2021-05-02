@@ -24,7 +24,7 @@ public class RacingCarTest {
 		RacingCar car = new RacingCar("chico");
 
 		// when
-		boolean isMove = car.move(num);
+		boolean isMove = car.move(Energy.createEnergy(new CustomEnergyPolicy(num)));
 
 		// then
 		assertThat(isMove).isEqualTo(expected);
