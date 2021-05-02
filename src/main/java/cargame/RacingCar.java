@@ -3,6 +3,7 @@ package cargame;
 public class RacingCar {
 
 	private String name;
+	private String location;
 
 	public RacingCar(String name) {
 		if (name.length() > 5) {
@@ -10,9 +11,18 @@ public class RacingCar {
 		}
 
 		this.name = name;
+		this.location = "";
 	}
 
 	public String getName() {
 		return name;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void print() {
+		System.out.printf("%-5s: %s\n", name, location);
 	}
 }
